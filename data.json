@@ -1,0 +1,124 @@
+{
+    "users": [
+        {
+            "id":"1",
+            "role_id":"1",
+            "role_name":" Ana depo yöneticisi",
+            "usermame":"ahmet06"
+        },
+        {
+            "id":"2",
+            "role_id":"1",
+            "role_name":" Ana depo yöneticisi",
+            "usermame":"aliylc14"
+        },
+        {
+            "id":"3",
+            "role_id":"1",
+            "role_name":"Ana depo yöneticisi",
+            "usermame":"mehmetkya"
+        },
+        {
+            "id":"4",
+            "role_id":"2",
+            "role_name":"Şube depo yöneticisi",
+            "usermame":"rnayalcn"
+        },
+        {
+            "id":"5",
+            "role_id":"2",
+            "role_name":"Şube depo yöneticisi",
+            "usermame":"velictn"
+        }
+
+    ],
+    "roles":[
+        {
+           "id":"1",
+           "name":"Depo yöneticisi"
+        },
+        {
+            "id":"2",
+            "name":"Şube yöneticisi"
+        }
+    ],
+    
+ "stores":
+ [
+    {
+        "id":"1",
+        "name":"Ana depo",
+        "address":"İstanbul/Bayrampaşa",
+        "size":"550"
+
+    },
+    {
+        "id":"2",
+        "name":"Şube depo",
+        "address":"İstanbul/Kadıköy",
+        "size":"150"
+
+    },
+    {
+        "id":"3",
+        "name":"Şube depo",
+        "address":"İstanbul/Beylikdüzü",
+        "size":"250"
+    },
+    {
+        "id":"4",
+        "name":"Şube depo",
+        "address":"İstanbul/Esenyurt",
+        "size":"350"
+    }
+
+ ],
+ "product":[
+     {
+         "id":"1",
+         "code":"A001",
+         "name":"Ambalaj",
+         "stock":"1500",
+         "isStockFull": false,
+         "purchase_date":"18.12.2021",
+         "purchase_price":"30tl",
+         "sale_price":"35",
+         "image":""
+     },
+     {
+        "id":"2",
+        "code":"A002",
+        "name":"Ambalaj",
+        "stock":"1500",
+        "isStockFull": false,
+        "purchase_date":"18.12.2021",
+        "purchase_price":"30tl",
+        "sale_price":"35",
+        "image":""
+    },
+    {
+        "id":"3",
+        "code":"K001",
+        "name":"Kağıt",
+        "stock":"1000",
+        "isStockFull": false,
+        "purchase_date":"18.12.2021",
+        "sale_price":"30",
+        "purchase_price":"25tl",
+        "image":""
+    },
+    {
+        "id":"4",
+        "code":"K001",
+        "name":"Kağıt",
+        "stock":"1000",
+        "isStockFull": false,
+        "purchase_date":"18.12.2021",
+        "purchase_price":"25tl",
+        "sale_price":"30",
+        "image":""
+    }
+
+ ]
+ 
+}
