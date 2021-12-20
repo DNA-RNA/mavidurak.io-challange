@@ -1,5 +1,9 @@
 const anasayfa={template: `<h1>Burası Ana Sayfa</h1>`}
 const anadepo={template: `
+<div>
+
+<button type="button" class="btn btn-primary m-2 fload-end" data-bs-toggle="modal"
+data-bs-target="#exampleModal" v-on:click="addClick()">Ürün Ekle</button>
 <table class="table table-striped">
 <thead class="thead-dark">
  <tr>
@@ -23,26 +27,53 @@ const anadepo={template: `
   </tr>
   </thead>
   <tbody>
-  <tr v-for="prdc in product">
+  <tr v-for="(prdc,index) in product">
    <td>{{prdc.id}}</td>
    <td>{{prdc.code}}</td>
    <td>{{prdc.name}}</td>
    <td>{{prdc.stock}}</td>
-   <td> <button type="button" class="btn btn-outline-primary mr-1">Ürün ekle
+   <td> <button type="button" class="btn btn-outline-primary mr-1" data-bs-toggle="modal"
+   data-bs-target="#exampleModal" v-on:click="editClick(prdc)">Ürün Güncelle
    </button>
-   <button type="button" class="btn btn-outline-danger mr-1">Ürün Sil
+   <button type="button"  v-on:click="editClick(prdc,index)" class="btn btn-outline-danger mr-1">Ürün Sil
    </button>
-   </td>
-
-   
-     
+   </td>   
   </tr>
   </tbody>
 
-</table>`,
+</table> 
+
+<div class="modal fade" id="exampleModal" tabindex="-1"
+aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-lg modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title" id="exampleModalLabel">{{modalTitle}}</h5>
+<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Kapat"></button>
+
+</div>
+<div class="modal-body">
+ <div class="input-group mb-3">
+    <span class="input-group-text">Ürün İsmi</span>
+    <input type="text" class="form-control" v-model="name">
+ </div>
+
+     <button type="button" v-on:click="createClick()" v-if="id==0" class="btn btn-primary">Ekle</button>
+     <button type="button" v-on:click="updateClick()" v-if="id!=0" class="btn btn-primary">Güncelle</button>
+</div>
+</div>
+
+</div>
+</div>
+
+
+</div>`,
 data(){
     return{
-        product:[]
+        product:[],
+        modalTitle:"",
+        id:0,
+        name:""
     }
 },
 methods:{
@@ -55,6 +86,32 @@ methods:{
         
         })
         
+    },
+    addClick(){
+        this.modalTitle="Ürün Ekle" ;
+        this.id=0;
+        this.name="";
+    },
+    editClick(prdct){
+        this.modalTitle="Ürün Güncelle" ;
+        this.id=prdct.id;
+        this.name=prdct.name;
+    },
+    createClick(){
+        fetch('./data.json',{
+            name:this.name
+        })
+        .then((res) => {
+            
+            this.product=res.product;
+            this.created();
+            alert(res.data);
+           
+        
+        })
+    },
+    deleteClick(prdct,index){
+       this.product.splice(index,1);
     }
 
 },
@@ -74,30 +131,3 @@ const router=new VueRouter({
 const app= new Vue({
     router
 }).$mount('#app')
-// window.addEventListener('load', () =>{
-    
-//     window.vue = new Vue({
-        
-//         data:{
-//             isLoading: true,
-
-//             product:[]
-
-//         },
-//         methods: {
-//           deleteFromProduct(index){
-//                this.product.splice(index,1);
-//            }
-//         },
-//         created(){
-//             fetch('./data.json')
-//             .then((res) => {return res.json()})
-//             .then((res) => {this.isLoading=false;
-                
-//                 this.product=res.product;
-            
-//             })
-            
-//         }
-//     })
-// }); 
