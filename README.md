@@ -10,3 +10,6 @@ Veritabanı Mysql ile oluşturulmuştur.
 ![veritabani](https://user-images.githubusercontent.com/77885953/149618507-7404bd74-e3e7-49f4-aee0-8ec147dc79ad.png)
 
 ### Oluşturulan tablolardan yazılan sorgular:
+**roles ,user ve user details tablolarını birleştirerek kullanıcıların hangi rolde olduğu sorgusunu yazdık.**
+![ss-1](https://user-images.githubusercontent.com/77885953/149619037-9df6d761-026d-4ac3-b63a-45f622306983.png)
+
