@@ -29,3 +29,4 @@ Veritabanı Mysql ile oluşturulmuştur.
 Arayüz Ekran Görüntüleri:
 ![ss1](https://user-images.githubusercontent.com/77885953/149632485-2e354d75-2120-4c3d-a6e3-240b1a8d26a7.jpeg)
 ![ss2](https://user-images.githubusercontent.com/77885953/149632526-58f9ae8a-8100-44ab-8d45-8db403d7f086.jpeg)
+![ss3](https://user-images.githubusercontent.com/77885953/149632579-e36a2259-c03c-443a-a0da-43256e1c66e4.jpeg)
