@@ -3,8 +3,10 @@ Mavidurak.io mentörlük challange ' ı  C# ile geliştirilen stok takip otomasy
 ## **Kullanılan Teknolojiler** : 
 C# 'da CRUD işlemleri ve veritabanı bağlantısı sağlanmıştır.
 Arayüzde Vue.js kullanılmıştır.
-Veritabanı Mysql oluşturulmuştur.
+Veritabanı Mysql ile oluşturulmuştur.
 
-### **Veri tabanı Diyagramı**:
+### **Veritabanı Diyagramı**:
 
 ![veritabani](https://user-images.githubusercontent.com/77885953/149618507-7404bd74-e3e7-49f4-aee0-8ec147dc79ad.png)
+
+### Oluşturulan tablolardan yazılan sorgular:
