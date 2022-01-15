@@ -1,4 +1,53 @@
-const anasayfa={template: `<h1>Burası Ana Sayfa</h1>`}
+const anasayfa={template: `
+<div>
+
+<h1 class="text-center">A Firması Depo Bilgileri</h1>
+<table class="table table-striped">
+<thead class="thead-dark">
+ <tr>
+
+     <th>
+         Türü
+     </th>
+     <th>
+         Adresi
+     </th>
+     <th>
+         Kapasitesi
+     </th>
+     
+
+  </tr>
+  
+  <tbody>
+  
+  <tr v-for="str in stores">
+   <td>{{str.name}}</td>
+   <td>{{str.address}}</td>
+   <td>{{str.size}}</td>
+  
+  </tr>
+  </tbody>
+  </thead>
+  </div>
+`, data(){
+    return{
+        stores:[]
+      
+    }
+},
+methods:{
+   
+    refreshData(){
+        axios.get(variables.API_URL + "stores")
+        .then((response)=>{this.product=response.data});
+    }
+
+
+},
+mounted:function(){
+    this.refreshData();
+}} 
 const anadepo={template: `
 <div>
 
@@ -25,13 +74,13 @@ data-bs-target="#exampleModal" v-on:click="addClick()">Ürün Ekle</button>
      </th>
 
   </tr>
-  </thead>
+  
   <tbody>
-  <tr v-for="(prdc,index) in product">
-   <td>{{prdc.id}}</td>
-   <td>{{prdc.code}}</td>
-   <td>{{prdc.name}}</td>
-   <td>{{prdc.stock}}</td>
+  <tr v-for="prdc in product">
+   <td>{{prdc.ProductID}}</td>
+   <td>{{prdc.ProductCode}}</td>
+   <td>{{prdc.ProductName}}</td>
+   <td>{{prdc.Stock}}</td>
    <td> <button type="button" class="btn btn-outline-primary mr-1" data-bs-toggle="modal"
    data-bs-target="#exampleModal" v-on:click="editClick(prdc)">Ürün Güncelle
    </button>
@@ -40,7 +89,7 @@ data-bs-target="#exampleModal" v-on:click="addClick()">Ürün Ekle</button>
    </td>   
   </tr>
   </tbody>
-
+  </thead>
 </table> 
 
 <div class="modal fade" id="exampleModal" tabindex="-1"
@@ -77,16 +126,12 @@ data(){
     }
 },
 methods:{
-    created(){
-        fetch('./data.json')
-        .then((res) => {return res.json()})
-        .then((res) => {this.isLoading=false;
-            
-            this.product=res.product;
-        
-        })
-        
-    },
+   
+    refreshData(){
+        axios.get(variables.API_URL + "products")
+        .then((response)=>{this.product=response.data});
+    }
+    ,
     addClick(){
         this.modalTitle="Ürün Ekle" ;
         this.id=0;
@@ -98,25 +143,21 @@ methods:{
         this.name=prdct.name;
     },
     createClick(){
-        fetch('./data.json',{
+        axios.post(variables.API_URL + "products",{
             name:this.name
         })
-        .then((res) => {
-            
-            this.product=res.product;
-            this.created();
-            alert(res.data);
-           
-        
-        })
+        .then((response)=>{this.refreshData();});
     },
-    deleteClick(prdct,index){
-       this.product.splice(index,1);
+    updateClick(){
+        axios.put(variables.API_URL + "products",{
+            name:this.name
+        })
+        .then((response)=>{this.refreshData();});
     }
 
 },
 mounted:function(){
-    this.created();
+    this.refreshData();
 }}
 const subedepo={template: `<h1>Burası Şube Depo ile ilgili</h1>`}
 const routes=[
