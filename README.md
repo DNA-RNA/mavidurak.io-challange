@@ -25,3 +25,6 @@ Veritabanı Mysql ile oluşturulmuştur.
 **Core Katman**: Entities ve DataAccess katmanlarındaki tekrar eden kod bloklarını ortak katmanda topladığımız katman.
 **Bussiness Katmanı**: Ekleme,silme,güncelleme işlemlerini yaparken yapılmasını istediğimiz iş kodlarını tuttuğumuz katman.Örneğin Alış fiyatı satış fiyatından büyük olmamsı için ProductValidator.cs classını oluşturup gerekli kodları yazdık.
 **Web API**: Controller ile ekleme,listeleme,silme,güncelleme kodlarını yazdık.
+
+Arayüz Ekran Görüntüsü:
+![ss1](https://user-images.githubusercontent.com/77885953/149632485-2e354d75-2120-4c3d-a6e3-240b1a8d26a7.jpeg)
