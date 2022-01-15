@@ -15,4 +15,5 @@ Veritabanı Mysql ile oluşturulmuştur.
 **stores tablosunu kullanarak hangi depoda hangi ürünün olduğu sorgusunu yazdık.**
 ![ss-2](https://user-images.githubusercontent.com/77885953/149619151-16532868-0efd-472d-9639-47bb2e192b9a.png)
 
-
+### **Sınıf Diyagramı**:
+![class](https://user-images.githubusercontent.com/77885953/149631609-6865edd6-677d-49f5-af24-56fb7cffe0ef.png)
