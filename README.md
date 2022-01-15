@@ -12,4 +12,7 @@ Veritabanı Mysql ile oluşturulmuştur.
 ### Oluşturulan tablolardan yazılan sorgular:
 **roles ,user ve user details tablolarını birleştirerek kullanıcıların hangi rolde olduğu sorgusunu yazdık.**
 ![ss-1](https://user-images.githubusercontent.com/77885953/149619037-9df6d761-026d-4ac3-b63a-45f622306983.png)
+**stores tablosunu kullanarak hangi depoda hangi ürünün olduğu sorgusunu yazdık.**
+![ss-2](https://user-images.githubusercontent.com/77885953/149619151-16532868-0efd-472d-9639-47bb2e192b9a.png)
+
 
