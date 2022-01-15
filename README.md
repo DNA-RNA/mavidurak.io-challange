@@ -20,5 +20,8 @@ Veritabanı Mysql ile oluşturulmuştur.
 ### **Sınıf Diyagramı**:
 ![class](https://user-images.githubusercontent.com/77885953/149631609-6865edd6-677d-49f5-af24-56fb7cffe0ef.png)
 
-**Entities Katmanı**: Veritabanındaki tablolara karşılık gelen classları tuttuğumuz katman. >
-**DataAccess Katmanı**: Sql bağlantılarının ve CRUD işlemlerinin yapıldığı katman >
+**Entities Katmanı**: Veritabanındaki tablolara karşılık gelen classları tuttuğumuz katman. 
+**DataAccess Katmanı**: Sql bağlantılarının ve CRUD işlemlerinin yapıldığı katman.
+**Core Katman**: Entities ve DataAccess katmanlarındaki tekrar eden kod bloklarını ortak katmanda topladığımız katman.
+**Bussiness Katmanı**: Ekleme,silme,güncelleme işlemlerini yaparken yapılmasını istediğimiz iş kodlarını tuttuğumuz katman.Örneğin Alış fiyatı satış fiyatından büyük olmamsı için ProductValidator.cs classını oluşturup gerekli kodları yazdık.
+**Web API**: Controller ile ekleme,listeleme,silme,güncelleme kodlarını yazdık.
