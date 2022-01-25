@@ -1,0 +1,27 @@
+{
+  "name": "mavidurak.io-challange",
+  "version": "1.0.0",
+  "description": "Mavidurak.io mentörlük challange ' ı  C# ile geliştirilen stok takip otomasyonu \r ## **Kullanılan Teknolojiler** : \r C# 'da CRUD işlemleri ve veritabanı bağlantısı sağlanmıştır.\r Arayüzde Vue.js kullanılmıştır.\r Veritabanı Mysql ile oluşturulmuştur.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DNA-RNA/mavidurak.io-challange.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DNA-RNA/mavidurak.io-challange/issues"
+  },
+  "homepage": "https://github.com/DNA-RNA/mavidurak.io-challange#readme",
+  "dependencies": {
+    "body-parser": "^1.19.1",
+    "express": "^4.17.2",
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.15"
+  }
+  
+}
