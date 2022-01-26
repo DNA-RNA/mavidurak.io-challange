@@ -1,50 +1,30 @@
-const mysql = require('mysql');
 const express= require('express');
 var app= express();
 const bodyparser= require('body-parser');
 const Connection = require('mysql/lib/Connection');
 const port = 5500;
+app.use(bodyparser.urlencoded({extended: false}));
 app.use(bodyparser.json());
-var mysqlConnection = mysql.createConnection({
-      host: 'localhost',
-      user :'root',
-      password: 'sugarbrownie',
-      database : 'mysqldb'
+
+app.get('/',(req,res)=>{
+    res.send('helloo');
 });
 
-mysqlConnection.connect((err)=> {
-    if(!err){
-        console.log('Db connection basarili');
-    }  
-    else{
-        console.log('Db connection basarisiz \n Error : ' + JSON.stringify(err,undefined,2));
-     }
-    
-});
-app.listen(port,()=>console.log('port no 5500 da çalışıyor'));
-//getall
-app.get('/products',(req,res)=> {
-    
-    mysqlConnection.query('SELECT * FROM products',function (err,rows,fields){
-        if(!err) {
-            console.log('Test');
-            res.send(rows);
-        }     
-        else 
-         console.log(err);
-    })
-   
-});
+app.listen(port,()=>console.log('port no ${port} da çalışıyor'));
+//getall fonksiyonları
 
-app.get('/users',(req,res)=> {
+const productRoutes = require('./routes/product.route');
+app.use('/api/products',productRoutes);
+
+// app.get('/roles',(req,res)=> {
     
-    mysqlConnection.query('SELECT * FROM users',function (err,users){
-        if(!err) {
-            console.log('Test-2');
-            res.send(users);
-        }     
-        else 
-         console.log(err);
-    })
-});
+//     mysqlConnection.query('SELECT * FROM roles',function (err,roles){
+//         if(!err) {
+//             console.log('Test-3');
+//             res.send(roles);
+//         }     
+//         else 
+//          console.log(err);
+//     })
+// });
 
