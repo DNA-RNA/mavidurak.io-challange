@@ -1,5 +1,5 @@
 
-const Product = require('../models/product.model');
+
 const ProductModel = require('../models/product.model');
 
 exports.getProductList = (req,res)=>{

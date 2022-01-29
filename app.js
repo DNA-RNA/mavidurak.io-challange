@@ -4,7 +4,7 @@ const anasayfa={template: `
 
 <h1 class="text-center">A Firması Depo Bilgileri</h1>
 <table class="table table-striped">
-<thead class="thead-dark">
+<thead class="thead-dark text-center">
  <tr>
 
      <th>
@@ -19,13 +19,13 @@ const anasayfa={template: `
      
 
   </tr>
+  </thead>
+  <tbody class="text-center">
   
-  <tbody>
-  
-  <tr v-for="str in stores">
-   <td>{{str.id}}</td>
-   <td>{{str.product_id}}</td>
-   <td>{{str.store_category_id}}</td>
+  <tr v-for="str in storeCategory">
+   <td>{{str.category_name}}</td>
+   <td>{{str.category_adress}}</td>
+   <td>{{str.category_size}}</td>
   
   </tr>
   </tbody>
@@ -34,7 +34,7 @@ const anasayfa={template: `
   </div>
 `, data(){
     return{
-        stores:[],
+        storeCategory:[],
       
     }
 },
@@ -42,8 +42,8 @@ methods:{
    
     refreshData(){
       
-        axios.get(variables.API_URL + "stores")
-        .then((response)=>{this.stores=response.data});
+        axios.get(variables.API_URL + "storecategories")
+        .then((response)=>{this.storeCategory=response.data});
     
     }
 
@@ -81,11 +81,11 @@ data-bs-target="#exampleModal" v-on:click="addClick()">Ürün Ekle</button>
       </th>
 
      <th>
-       Ürün ekle/sil
+       Ürün güncelle/sil
      </th>
 
   </tr>
-  
+  </thead>
   <tbody>
   <tr v-for="prdc in product">
    <td>{{prdc.id}}</td>
@@ -155,6 +155,7 @@ methods:{
         this.modalTitle="Ürün Güncelle" ;
         this.id=prdct.id;
         this.name=prdct.name;
+
     },
     createClick(){
         axios.post(variables.API_URL + "products",{
@@ -163,9 +164,11 @@ methods:{
         .then((response)=>{this.refreshData();});
     },
     updateClick(){
-        axios.put(variables.API_URL + "products",{
+        axios.put(variables.API_URL + "products/1",{
+            id:this.id,
             name:this.name
         })
+        
         .then((response)=>{this.refreshData();});
     }
 
