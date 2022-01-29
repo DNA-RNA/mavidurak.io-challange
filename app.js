@@ -1,3 +1,4 @@
+
 const anasayfa={template: `
 <div>
 
@@ -22,28 +23,31 @@ const anasayfa={template: `
   <tbody>
   
   <tr v-for="str in stores">
-   <td>{{str.name}}</td>
-   <td>{{str.address}}</td>
-   <td>{{str.size}}</td>
+   <td>{{str.id}}</td>
+   <td>{{str.product_id}}</td>
+   <td>{{str.store_category_id}}</td>
   
   </tr>
   </tbody>
   </thead>
+  </table>
   </div>
 `, data(){
     return{
-        stores:[]
+        stores:[],
       
     }
 },
 methods:{
    
     refreshData(){
+      
         axios.get(variables.API_URL + "stores")
-        .then((response)=>{this.product=response.data});
+        .then((response)=>{this.stores=response.data});
+    
     }
 
-
+     
 },
 mounted:function(){
     this.refreshData();
@@ -61,14 +65,21 @@ data-bs-target="#exampleModal" v-on:click="addClick()">Ürün Ekle</button>
          Ürün Id
      </th>
      <th>
-         Ürün Kodu
+         Ürün Adı
      </th>
      <th>
-         Ürün Adı
+         Ürün Kodu
      </th>
      <th>
          Stock Durumu
      </th>
+     <th>
+         Alış Fiyatı
+     </th>
+     <th>
+          Satış Fiyatı
+      </th>
+
      <th>
        Ürün ekle/sil
      </th>
@@ -77,10 +88,12 @@ data-bs-target="#exampleModal" v-on:click="addClick()">Ürün Ekle</button>
   
   <tbody>
   <tr v-for="prdc in product">
-   <td>{{prdc.ProductID}}</td>
-   <td>{{prdc.ProductCode}}</td>
-   <td>{{prdc.ProductName}}</td>
-   <td>{{prdc.Stock}}</td>
+   <td>{{prdc.id}}</td>
+   <td>{{prdc.product_name}}</td>
+   <td>{{prdc.prdct_code}}</td>
+   <td>{{prdc.stock}}</td>
+   <td>{{prdc.purchase_price}}</td>
+   <td>{{prdc.sale_price}}</td>
    <td> <button type="button" class="btn btn-outline-primary mr-1" data-bs-toggle="modal"
    data-bs-target="#exampleModal" v-on:click="editClick(prdc)">Ürün Güncelle
    </button>
@@ -130,6 +143,7 @@ methods:{
     refreshData(){
         axios.get(variables.API_URL + "products")
         .then((response)=>{this.product=response.data});
+        
     }
     ,
     addClick(){

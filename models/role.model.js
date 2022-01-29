@@ -20,7 +20,7 @@ Role.getAllRoles = (result) => {
 }
 
 //get by ıd
-Role.getRoleByID = (id,result)=>{
+Role.getRolesByID = (id,result)=>{
     dbConn.query('SELECT * FROM roles WHERE id=?',id,(err,res)=>{
        if(!err) {        
           console.log('Test-role-id');
