@@ -19,11 +19,17 @@ Veritabanı Mysql ile oluşturulmuştur.
 
 
 Arayüz Ekran Görüntüleri:
-   -**AnaDepo**  
+   
+   **AnaDepo**  
 
 ![ss-1](https://user-images.githubusercontent.com/77885953/151710789-0ea88a6c-2e40-47e1-abf7-b544ece95e70.png)
 
-  -**AnaSayfa**
+  **AnaSayfa**
 
 ![ss-2](https://user-images.githubusercontent.com/77885953/151710989-58bbc287-0126-42df-bcb8-47b5e4109139.png)
+
+ **ŞubeDepo**
+ 
+ ![ss-1](https://user-images.githubusercontent.com/77885953/151710789-0ea88a6c-2e40-47e1-abf7-b544ece95e70.png)
+
 
